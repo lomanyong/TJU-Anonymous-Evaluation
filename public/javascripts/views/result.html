@@ -1,0 +1,23 @@
+<div class="ui-tooltips ui-tooltips-warn" ng-show="isError">
+  <div class="ui-tooltips-cnt ui-border-b">
+    <i></i>查询过程中出错惹...
+  </div>
+</div>
+<div class="ui-tooltips ui-tooltips-state">
+  <div class="ui-tooltips-cnt ui-border-b">
+    {{ query }} 的搜索结果如下：
+    <button class="ui-btn ui-btn-primary" ng-click="back()">返回首页</button>
+  </div>
+</div>
+<ul class="ui-list ui-list-text ui-border-tb ui-list-link" ng-init="search()" ng-show="!isLoading">
+  <li class="ui-border-t" ng-repeat="course in list" ng-click="viewEvaluations($index)">
+    <div class="ui-list-info">
+      <h4>{{ course.coursename }}</h4>
+      <p>{{ course.teacher }}（{{ course.college }}）</p>
+    </div>
+  </li>
+</ul>
+<div class="ui-loading-wrap" ng-show="isLoading">
+  <p>加载中</p>
+  <i class="ui-loading"></i>
+</div>

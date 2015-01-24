@@ -1,0 +1,80 @@
+<div class="ui-tips ui-tips-info">
+  <i></i>填写完提交即可，不保留任何个人信息
+</div>
+<div class="ui-tooltips ui-tooltips-warn" ng-show="isError">
+  <div class="ui-tooltips-cnt ui-border-b">
+    <i></i>查询过程中出错惹...
+  </div>
+</div>
+<div class="ui-form ui-border-t" style="margin-bottom: 70px;" ng-init="init()">
+  <form action="#">
+    <div class="ui-form-item ui-form-item-show ui-border-b">
+      <label for="#">课程</label>
+      <input type="text" ng-model="course.coursename" readonly>
+    </div>
+
+    <div class="ui-form-item ui-form-item-show ui-border-b">
+      <label for="#">老师</label>
+      <input type="text" ng-model="course.teacher" readonly>
+    </div>
+
+    <div class="ui-border-b" style="padding-left: 15px;">
+      <label class="ui-radio" name="radio">
+        <input type="radio" name="radio" value="1" ng-model="rate"> 1分
+      </label>
+    </div>
+
+    <div class="ui-border-b" style="padding-left: 15px;">
+      <label class="ui-radio" name="radio">
+        <input type="radio" name="radio" value="2" ng-model="rate"> 2分
+      </label>
+    </div>
+
+    <div class="ui-border-b" style="padding-left: 15px;">
+      <label class="ui-radio" name="radio">
+        <input type="radio" name="radio" value="3" ng-model="rate"> 3分
+      </label>
+    </div>
+
+    <div class="ui-border-b" style="padding-left: 15px;">
+      <label class="ui-radio" name="radio">
+        <input type="radio" name="radio" value="4" ng-model="rate"> 4分
+      </label>
+    </div>
+
+    <div class="ui-border-b" style="padding-left: 15px;">
+      <label class="ui-radio" name="radio">
+        <input type="radio" name="radio" value="5" ng-model="rate"> 5分
+      </label>
+    </div>
+
+    <div class="ui-form-item ui-form-item-textarea ui-border-b">
+      <label for="#">评价</label>
+      <textarea placeholder="课程评价还有老师评价都可以哟" ng-model="content"></textarea>
+    </div>
+  </form>
+</div>
+<div class="ui-loading-wrap" ng-show="isLoading">
+  <p>提交中...</p>
+  <i class="ui-loading"></i>
+</div>
+<div class="ui-btn-group ui-border-b" style="margin-bottom: 50px">
+  <button type="button" ng-click="submit()" ng-disabled="isLoading">提交</button>
+  <button type="button" ng-click="back()">返回</button>
+</div>
+
+<div class="ui-dialog">
+  <div class="ui-dialog-cnt">
+    <div class="ui-dialog-bd">
+      <div>
+        <h4>提示</h4>
+        <div>
+          不能有内容是空的哦，可能还没有评分吧？
+        </div>
+      </div>
+    </div>
+    <div class="ui-dialog-ft ui-btn-group">
+      <button type="button" data-role="button" class="select">关闭</button>
+    </div>
+  </div>
+</div>

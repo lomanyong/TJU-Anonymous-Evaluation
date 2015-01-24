@@ -1,0 +1,42 @@
+<div class="container" style="margin-top: 20px;" ng-init="init()">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="ui-tooltips ui-tooltips-state">
+        <div class="ui-tooltips-cnt ui-border-b">
+          高分课程
+        </div>
+      </div>
+      <ul class="ui-list ui-list-text ui-border-tb">
+        <li class="ui-border-t ui-list-item-link" ng-repeat="item in courses.score" ng-click="viewEvaluations(0, $index)">
+          <div class="ui-list-info">
+            <h4>{{ item.coursename }}</h4>
+            <p class="ui-nowrap">{{ item.teacher }}</p>
+          </div>
+          <div class="ui-badge-muted">{{ item.avg }}分</div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div class="ui-tooltips ui-tooltips-state">
+        <div class="ui-tooltips-cnt ui-border-b">
+          热评课程
+        </div>
+      </div>
+      <ul class="ui-list ui-list-text ui-border-tb">
+        <li class="ui-border-t ui-list-item-link" ng-repeat="item in courses.hot" ng-click="viewEvaluations(1, $index)">
+          <div class="ui-list-info">
+            <h4>{{ item.coursename }}</h4>
+            <p class="ui-nowrap">{{ item.teacher }}</p>
+          </div>
+          <div class="ui-badge-muted">{{ item.count }}人</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="ui-loading-wrap" ng-show="isLoading">
+      <p>加载中</p>
+      <i class="ui-loading"></i>
+    </div>
+  </div> 
+</div>

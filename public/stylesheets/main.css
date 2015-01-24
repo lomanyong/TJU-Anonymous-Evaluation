@@ -1,0 +1,15 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h2.title {
+    padding: 0 15px;
+    line-height: 48px;
+    font-size: 20px;
+    color: #00A5E3;
+    position: relative;
+}
